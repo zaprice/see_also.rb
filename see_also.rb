@@ -14,7 +14,7 @@ page_base = "https://en.wikipedia.org/wiki/"
 bad_regex = /\*[[:space:]]*\[\[[[:space:]]*([a-z].*?)[[:space:]]*\]\]/
 
 for i in 1..num
-  
+
   json = JSON.parse HTTParty.get(mediawiki_query).body
 
   json["query"]["pages"].keys.each do |id|
@@ -23,7 +23,7 @@ for i in 1..num
 
     if !see_also.nil? and see_also[1] =~ bad_regex
       title_underscores =  json["query"]["pages"][id]["title"].gsub(/[[:space:]]/, '_')
-      system("open \"#{page_base}#{title_underscores}\"")
+      system("open \"#{page_base}#{title_underscores}#See_also\"")
     end
   end
 end
