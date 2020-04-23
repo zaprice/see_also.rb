@@ -1,6 +1,7 @@
 require 'httparty'
 require 'nokogiri'
 require 'JSON'
+require_relative 'regex'
 
 # MediaWiki only allows full text for 50 pages per request
 per = 50
@@ -10,8 +11,7 @@ num = 1000
 mediawiki_query = "https://en.wikipedia.org/w/api.php?action=query&prop=revisions&generator=random&grnnamespace=0&grnlimit=#{per}&rvprop=content&format=json"
 
 page_base = "https://en.wikipedia.org/wiki/"
-# Regex to detect initial lowercase letters
-bad_regex = /\*[[:space:]]*\[\[[[:space:]]*([a-z].*?)[[:space:]]*\]\]/
+bad_regex = build_regex
 
 for i in 1..num
 
