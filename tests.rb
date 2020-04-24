@@ -52,6 +52,9 @@ class TestSeeAlso < Test::Unit::TestCase
       "*[[Wikt:Corde|corde]]",
       "<!--* [[vacancy rate]] -->",
       "* [[IPhone OS#Web applications|iPhone Web Applications]]",
+      "* [[e-gold]]", # weird hyphen
+      "*[[F-number|{{mvar|f}}-number]]",
+      "* [[IDEN|iDEN technology explained]]",
     ]
 
     bad_regex = build_regex
