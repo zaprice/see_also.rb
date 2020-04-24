@@ -13,7 +13,8 @@ class TestSeeAlso < Test::Unit::TestCase
       "* [[badminton]]",
       "*[[algorithm]]",
       "*[[broadcast orchestra|broadcast Orchestra]]",
-      "*[[Broadcast orchestra|broadcast Orchestra]]"
+      "*[[Broadcast orchestra|broadcast Orchestra]]",
+      "* [[ broadcast orchestra | broadcast Orchestra ]]"
     ]
 
     bad_regex = build_regex
@@ -35,7 +36,7 @@ class TestSeeAlso < Test::Unit::TestCase
       "* [[beta-Methylamino-L-alanine|β-Methylamino-<small>L</small>-alanine]] (BMAA)",
       "*[[allo-Inositol|''allo''-Inositol]]",
       "*[[broadcast orchestra|Broadcast Orchestra]]",
-      "*[[Jordan Historic District]], Jordan, Minnesota, [[List of RHPs in MN|listed on the NRHP in Minnesota]]"
+      "* [[Frangipani family]], a powerful [[Rome|Roman]] [[patrician (post-Roman Europe)|patrician]] clan in the [[Middle Ages]]",
     ]
 
     bad_regex = build_regex
@@ -45,7 +46,7 @@ class TestSeeAlso < Test::Unit::TestCase
   def test_bad_regex_nomatch_todo
     bad_regex = build_regex
 
-    no_match = []
+    no_match = ["*[[Wikt:Corde|corde]]"]
 
     bad_regex = build_regex
     # no_match.each { |text| assert_no_match(bad_regex, text) }

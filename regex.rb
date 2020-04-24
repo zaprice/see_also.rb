@@ -8,11 +8,11 @@ def build_regex
   bad_prefixes.map! { |prefix| prefix + ":"}
 
   # Other exceptions: names, known use of lowercase, etc.
-  exceptions = ["al-[A-Z]", "i[A-Z]", "i-[A-Z]", "e[A-Z]", "e-[A-Z]", "pH"]
+  exceptions = ["al-[A-Z]", "i-?[A-Z]", "e-?[A-Z]", "pH", "d'?[A-Z]", "p-"]
   bad_prefixes += exceptions
 
   # OR into a regex
   bad_prefixes_regex = /(?!#{bad_prefixes.join('|')})/
   # Return regex to detect initial lowercase letters
-  /\*\s*\[\[\s*#{bad_prefixes_regex}(?:[^\]]*?\|)?\s*[a-z][^|]*?\s*\]\]/
+  /\*\s*\[\[\s*#{bad_prefixes_regex}(?:[^\]]*\|)?\s*[a-z][^\|]*?\s*\]\]/
 end
