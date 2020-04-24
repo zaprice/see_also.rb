@@ -19,10 +19,10 @@ for i in 1..num
 
   json["query"]["pages"].keys.each do |id|
     text = json["query"]["pages"][id]["revisions"][0]["*"]
-    see_also = /[[:space:]]*==See Also==[[:space:]]*(.*)/i.match text
+    see_also = /\s*==See Also==\s*(.*)/i.match text
 
     if !see_also.nil? and see_also[1] =~ bad_regex
-      title_underscores =  json["query"]["pages"][id]["title"].gsub(/[[:space:]]/, '_')
+      title_underscores =  json["query"]["pages"][id]["title"].gsub(/\s/, '_')
       system("open \"#{page_base}#{title_underscores}#See_also\"")
     end
   end
