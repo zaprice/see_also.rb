@@ -34,7 +34,8 @@ class TestSeeAlso < Test::Unit::TestCase
       "*[[o-Xylene|''o''-Xylene]]",
       "* [[beta-Methylamino-L-alanine|β-Methylamino-<small>L</small>-alanine]] (BMAA)",
       "*[[allo-Inositol|''allo''-Inositol]]",
-      "*[[broadcast orchestra|Broadcast Orchestra]]"
+      "*[[broadcast orchestra|Broadcast Orchestra]]",
+      "*[[Jordan Historic District]], Jordan, Minnesota, [[List of RHPs in MN|listed on the NRHP in Minnesota]]"
     ]
 
     bad_regex = build_regex

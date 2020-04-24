@@ -12,7 +12,7 @@ def build_regex
   bad_prefixes += exceptions
 
   # OR into a regex
-  bad_prefixes_regex = /(?!(#{bad_prefixes.join('|')}))/
+  bad_prefixes_regex = /(?!#{bad_prefixes.join('|')})/
   # Return regex to detect initial lowercase letters
-  /\*\s*\[\[\s*#{bad_prefixes_regex}(?:.*?\|)?[a-z][^|]*?\s*\]\]/
+  /\*\s*\[\[\s*#{bad_prefixes_regex}(?:[^\]]*?\|)?\s*[a-z][^|]*?\s*\]\]/
 end
