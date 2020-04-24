@@ -14,7 +14,7 @@ class TestSeeAlso < Test::Unit::TestCase
       "*[[algorithm]]",
       "*[[broadcast orchestra|broadcast Orchestra]]",
       "*[[Broadcast orchestra|broadcast Orchestra]]",
-      "* [[ broadcast orchestra | broadcast Orchestra ]]"
+      "* [[ broadcast orchestra | broadcast Orchestra ]]",
     ]
 
     bad_regex = build_regex
@@ -37,6 +37,8 @@ class TestSeeAlso < Test::Unit::TestCase
       "*[[allo-Inositol|''allo''-Inositol]]",
       "*[[broadcast orchestra|Broadcast Orchestra]]",
       "* [[Frangipani family]], a powerful [[Rome|Roman]] [[patrician (post-Roman Europe)|patrician]] clan in the [[Middle Ages]]",
+      "* [[van der Lith]] and van Lith, Dutch-language surnames",
+      "* [[van Lith]]",
     ]
 
     bad_regex = build_regex
@@ -46,7 +48,10 @@ class TestSeeAlso < Test::Unit::TestCase
   def test_bad_regex_nomatch_todo
     bad_regex = build_regex
 
-    no_match = ["*[[Wikt:Corde|corde]]"]
+    no_match = [
+      "*[[Wikt:Corde|corde]]",
+      "<!--* [[vacancy rate]] -->",
+    ]
 
     bad_regex = build_regex
     # no_match.each { |text| assert_no_match(bad_regex, text) }
