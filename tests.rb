@@ -51,6 +51,7 @@ class TestSeeAlso < Test::Unit::TestCase
     no_match = [
       "*[[Wikt:Corde|corde]]",
       "<!--* [[vacancy rate]] -->",
+      "* [[IPhone OS#Web applications|iPhone Web Applications]]",
     ]
 
     bad_regex = build_regex
